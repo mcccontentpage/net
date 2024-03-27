@@ -1,0 +1,12 @@
+ public int empId { get; set; } 
+        public string Designation { get; set; } 
+        public string fname { get; set; } 
+        public string lname { get; set; } 
+ 
+        public Class1(int empId, string designation, string fname, string lname) 
+        { 
+            this.empId = empId; 
+            this.Designation = designation; 
+            this.fname = fname; 
+            this.lname = lname; 
+        } 
