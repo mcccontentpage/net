@@ -1,0 +1,22 @@
+ try 
+            { 
+                SqlConnection con = new SqlConnection("Data 
+Source=Shubham\\SQLEXPRESS;Initial Catalog=pracs;Integrated Security=True;"); 
+                con.Open(); 
+                SqlCommand cmd = new SqlCommand(); 
+                cmd.Connection = con; 
+                cmd.CommandText = "select max(matchID) from match1"; 
+                int it = Convert.ToInt32(cmd.ExecuteScalar()); 
+                cmd.CommandText = "select matchScore from match1 where matchID=" 
++ it; 
+                                
+                SqlDataReader ad; 
+                ad = cmd.ExecuteReader(); 
+                ad.Read(); 
+                lblRUN.Text = ad[0].ToString(); 
+                con.Close(); 
+            } 
+            catch(Exception ex) 
+            { 
+                lblMSG.Text = ex.ToString(); 
+            } 
