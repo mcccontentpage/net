@@ -1,0 +1,43 @@
+String th; 
+            TableCell c1 = new TableCell(); 
+            TableCell c2 = new TableCell(); 
+            TableCell c3 = new TableCell(); 
+            TableCell c4 = new TableCell(); 
+            TableCell c5 = new TableCell(); 
+            TableCell c6 = new TableCell(); 
+            TableCell c7 = new TableCell(); 
+            TableCell c8 = new TableCell(); 
+            TableRow r1 = new TableRow(); 
+            TableRow r2 = new TableRow(); 
+            c1.Text = "Show Timings"; 
+            c2.Text = "09:00 AM"; 
+            c3.Text = "12:00 PM"; 
+            c4.Text = "05:00 PM"; 
+ 
+            tb1.Controls.Add(r1); 
+            r1.Controls.Add(c1); 
+            r1.Controls.Add(c2); 
+            r1.Controls.Add(c3); 
+            r1.Controls.Add(c4); 
+            c5.Text = "Movie Name"; 
+            c6.Text = "Hanu Man"; 
+            c7.Text = "KGF Chapter 2"; 
+            c8.Text = "Salaar"; 
+            tb1.Controls.Add(r2); 
+            r2.Controls.Add(c5); 
+            r2.Controls.Add(c6); 
+            r2.Controls.Add(c7); 
+            r2.Controls.Add(c8); 
+            th = Convert.ToString(Session["Thetre"]); 
+            if (th == "IMAX") 
+            { 
+                if (Cache["IMAX"] == null) 
+                { 
+                    Cache.Insert("IMAX", tb1, null, DateTime.Now.AddSeconds(30), 
+TimeSpan.Zero); 
+                } 
+                else 
+                { 
+                    Response.Write("Reading From Cache"); 
+                } 
+            }
