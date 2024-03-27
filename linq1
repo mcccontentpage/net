@@ -1,0 +1,11 @@
+ List<Class1> emp = new List<Class1>(); 
+            emp.Add(new Class1(1,"Manager","Siddhesh","Bharaskar")); 
+            emp.Add(new Class1(2,"HR","Ved","Wadekar")); 
+            emp.Add(new Class1(3,"CEH","Shubham","Bhandarkar")); 
+            emp.Add(new Class1(4,"Designer","Sahil","Hire")); 
+            emp.Add(new Class1(5,"Developer","Omkar","Salunkhe")); 
+            emp.Add(new Class1(6, "Developer", "Ketan","Nalawade")); 
+            emp.Add(new Class1(7,"Tester","Sujal","More")); 
+            var matches = from em in emp where em.lname.EndsWith("e") select em; 
+            GridView1.DataSource = matches; 
+            GridView1.DataBind(); 
