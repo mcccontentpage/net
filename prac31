@@ -1,0 +1,8 @@
+ foreach (ListItem listItem in chklang.Items) 
+            { 
+                if (listItem.Selected == true) 
+                { 
+                    lblresult.Text += "<br/>" + listItem.Text; 
+                } 
+            } 
+            lblresult.Text += "</br>";
