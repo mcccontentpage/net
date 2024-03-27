@@ -1,0 +1,83 @@
+using System; 
+using System.Collections.Generic; 
+using System.Data; 
+using System.Data.SqlClient; 
+using System.Linq; 
+using System.Web; 
+using System.Web.UI; 
+using System.Web.UI.WebControls; 
+ 
+namespace pracexam 
+{ 
+    public partial class WebForm1 : System.Web.UI.Page 
+    { 
+        protected void Page_Load(object sender, EventArgs e) 
+        { 
+            if (!IsPostBack) 
+            { 
+                LoadRecord(); 
+            } 
+ 
+        } 
+        SqlConnection con = new SqlConnection("Data 
+Source=SHUBHAM\\SQLEXPRESS;Initial Catalog=pracs;Integrated Security=True;"); 
+ 
+        protected void btn_Insert_Click(object sender, EventArgs e) 
+        { 
+            con.Open(); 
+            SqlCommand cmd = new SqlCommand("Insert into CRUD 
+values('"+int.Parse(txt_RN.Text)+"','"+txt_NM.Text+"','"+txt_CN.Text+"','"+txt_LO
+ C.Text+"')",con); 
+            cmd.ExecuteNonQuery(); 
+            con.Close(); 
+            //ScriptManager.RegisterStartupScript(this, this.GetType(), "script", 
+"alert('Sucessfully Inserted');", true); 
+Shubham Bhandarkar                                                                                                 238306 
+Mulund College of Commerce(Autonomous)                                                          .NET Technologies 
+            LoadRecord(); 
+        } 
+ 
+        void LoadRecord() 
+        { 
+            SqlCommand cmd = new SqlCommand("select * from CRUD", con); 
+            SqlDataAdapter d = new SqlDataAdapter(cmd); 
+            DataTable dt = new DataTable(); 
+            d.Fill(dt); 
+            grd_data.DataSource = dt; 
+            grd_data.DataBind(); 
+        } 
+ 
+        protected void btn_UP_Click(object sender, EventArgs e) 
+        { 
+            con.Open(); 
+            SqlCommand cmd = new SqlCommand("Update CRUD set Name= 
+'"+txt_NM.Text+ "',Contact= '"+txt_CN.Text+ "',Location= '"+txt_LOC.Text+ "' 
+where Roll_no='" +int.Parse(txt_RN.Text)+"'",con); 
+            cmd.ExecuteNonQuery(); 
+            con.Close(); 
+            //ScriptManager.RegisterStartupScript(this, this.GetType(), "script", 
+"alert('Sucessfully Updated');", true); 
+            LoadRecord(); 
+        } 
+ 
+        protected void btn_DEL_Click(object sender, EventArgs e) 
+        { 
+            con.Open(); 
+            SqlCommand cmd = new SqlCommand("Delete CRUD where Roll_no='" + 
+int.Parse(txt_RN.Text) + "'", con); 
+            cmd.ExecuteNonQuery(); 
+            con.Close(); 
+            //ScriptManager.RegisterStartupScript(this, this.GetType(), "script", 
+"alert('Sucessfully Deleted');", true); 
+            LoadRecord(); 
+        } 
+ 
+        protected void btn_CLR_Click(object sender, EventArgs e) 
+        { 
+            txt_RN.Text = String.Empty; 
+            txt_NM.Text = String.Empty; 
+            txt_CN.Text = String.Empty; 
+            txt_LOC.Text = String.Empty; 
+        } 
+    } 
+}
