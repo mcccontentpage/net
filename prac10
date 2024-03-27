@@ -1,0 +1,179 @@
+using System; 
+using System.Collections.Generic; 
+using System.Linq; 
+using System.Web; 
+using System.Web.UI; 
+using System.Web.UI.WebControls; 
+ 
+namespace Prac10 
+{ 
+    public partial class ticket : System.Web.UI.Page 
+    { 
+        TableCell c1 = new TableCell(); 
+        TableCell c2 = new TableCell(); 
+        TableCell c3 = new TableCell(); 
+        TableCell c4 = new TableCell(); 
+        TableCell c5 = new TableCell(); 
+        TableCell c6 = new TableCell(); 
+        TableCell c7 = new TableCell(); 
+        TableCell c8 = new TableCell(); 
+        TableRow r1 = new TableRow(); 
+        TableRow r2 = new TableRow(); 
+        protected void Page_Load(object sender, EventArgs e) 
+        { 
+ 
+        } 
+ 
+        protected void ddl_theatre_SelectedIndexChanged(object sender, EventArgs e) 
+        { 
+            result_Table.Controls.Clear(); 
+            if(ddl_theatre.Text == "Cinepolis - Bhandup"){ 
+                c1.Text = "Timings"; 
+                c2.Text = "12:00 PM"; 
+                c3.Text = "03:00 PM"; 
+                c4.Text = "07:00 PM"; 
+                result_Table.Controls.Add(r1); 
+                r1.Controls.Add(c1); 
+                r1.Controls.Add(c2); 
+                r1.Controls.Add(c3); 
+                r1.Controls.Add(c4); 
+                c5.Text = "Movie Name"; 
+                c6.Text = "Hanu-Man"; 
+                c7.Text = "KGF"; 
+                c8.Text = "Kantaara"; 
+                result_Table.Controls.Add(r2); 
+                r2.Controls.Add(c5); 
+                r2.Controls.Add(c6); 
+                r2.Controls.Add(c7); 
+                r2.Controls.Add(c8); 
+            } 
+            else if (ddl_theatre.Text == "INOX - Mulund") 
+            { 
+                c1.Text = "Timings"; 
+                c2.Text = "12:00 PM"; 
+ 
+                c3.Text = "03:00 PM"; 
+                c4.Text = "07:00 PM"; 
+                result_Table.Controls.Add(r1); 
+                r1.Controls.Add(c1); 
+                r1.Controls.Add(c2); 
+                r1.Controls.Add(c3); 
+                r1.Controls.Add(c4); 
+                c5.Text = "Movie Name"; 
+                c6.Text = "Fast and Furious-7"; 
+                c7.Text = "Cars 4"; 
+                c8.Text = "Golmaal Again"; 
+                result_Table.Controls.Add(r2); 
+                r2.Controls.Add(c5); 
+                r2.Controls.Add(c6); 
+                r2.Controls.Add(c7); 
+                r2.Controls.Add(c8); 
+            } 
+            else if (ddl_theatre.Text == "PVR - Thane") 
+            { 
+                c1.Text = "Timings"; 
+                c2.Text = "12:00 PM"; 
+                c3.Text = "03:00 PM"; 
+                c4.Text = "07:00 PM"; 
+                result_Table.Controls.Add(r1); 
+                r1.Controls.Add(c1); 
+                r1.Controls.Add(c2); 
+                r1.Controls.Add(c3); 
+                r1.Controls.Add(c4); 
+                c5.Text = "Movie Name"; 
+                c6.Text = "Fast and Furious-8"; 
+                c7.Text = "Cars 2"; 
+                c8.Text = "Golmaal 3"; 
+                result_Table.Controls.Add(r2); 
+                r2.Controls.Add(c5); 
+                r2.Controls.Add(c6); 
+                r2.Controls.Add(c7); 
+                r2.Controls.Add(c8); 
+            } 
+            else if (ddl_theatre.Text == "PVR - Pune") 
+            { 
+                c1.Text = "Timings"; 
+                c2.Text = "12:00 PM"; 
+                c3.Text = "03:00 PM"; 
+                c4.Text = "07:00 PM"; 
+                result_Table.Controls.Add(r1); 
+                r1.Controls.Add(c1); 
+                r1.Controls.Add(c2); 
+                r1.Controls.Add(c3); 
+                r1.Controls.Add(c4); 
+                c5.Text = "Movie Name"; 
+                c6.Text = "DDLJ"; 
+                c7.Text = "LEO"; 
+                c8.Text = "Jailer"; 
+                result_Table.Controls.Add(r2); 
+                r2.Controls.Add(c5); 
+                r2.Controls.Add(c6); 
+                r2.Controls.Add(c7); 
+                r2.Controls.Add(c8); 
+ 
+            } 
+            else if (ddl_theatre.Text == "Victory Theatre") 
+            { 
+                c1.Text = "Timings"; 
+                c2.Text = "12:00 PM"; 
+                c3.Text = "03:00 PM"; 
+                c4.Text = "07:00 PM"; 
+                result_Table.Controls.Add(r1); 
+                r1.Controls.Add(c1); 
+                r1.Controls.Add(c2); 
+                r1.Controls.Add(c3); 
+                r1.Controls.Add(c4); 
+                c5.Text = "Movie Name"; 
+                c6.Text = "Vikram"; 
+                c7.Text = "Kaithi"; 
+                c8.Text = "Master"; 
+                result_Table.Controls.Add(r2); 
+                r2.Controls.Add(c5); 
+                r2.Controls.Add(c6); 
+                r2.Controls.Add(c7); 
+                r2.Controls.Add(c8); 
+            } 
+            else if (ddl_theatre.Text == "Neelayam Theatre") 
+            { 
+                c1.Text = "Timings"; 
+                c2.Text = "12:00 PM"; 
+                c3.Text = "03:00 PM"; 
+                c4.Text = "07:00 PM"; 
+                result_Table.Controls.Add(r1); 
+                r1.Controls.Add(c1); 
+                r1.Controls.Add(c2); 
+                r1.Controls.Add(c3); 
+                r1.Controls.Add(c4); 
+                c5.Text = "Movie Name"; 
+                c6.Text = "Guntur Kaaram"; 
+                c7.Text = "Alavaikunthapuram"; 
+                c8.Text = "Salaar"; 
+                result_Table.Controls.Add(r2); 
+                r2.Controls.Add(c5); 
+                r2.Controls.Add(c6); 
+                r2.Controls.Add(c7); 
+                r2.Controls.Add(c8); 
+            } 
+ 
+        } 
+ 
+        protected void rbl_loc_SelectedIndexChanged(object sender, EventArgs e) 
+        { 
+            if(rbl_loc.SelectedValue == "Mumbai") 
+            { 
+                ddl_theatre.Items.Clear(); 
+                ddl_theatre.Items.Add("Cinepolis - Bhandup"); 
+                ddl_theatre.Items.Add("INOX - Mulund"); 
+                ddl_theatre.Items.Add("PVR - Thane"); 
+            } 
+            else 
+            { 
+                ddl_theatre.Items.Clear(); 
+ 
+                ddl_theatre.Items.Add("PVR - Pune"); 
+                ddl_theatre.Items.Add("Victory Theatre"); 
+                ddl_theatre.Items.Add("Neelayam Theatre"); 
+            } 
+        } 
+    } 
+} 
