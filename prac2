@@ -1,0 +1,12 @@
+ int at = 3; 
+                if (Session["n"] != null) 
+                { 
+                    at = Convert.ToInt16(Session["n"].ToString()); 
+                    at--; 
+                } 
+                Session["n"] = at; 
+                if (at == 0) 
+                { 
+                    btn_LOGIN.Enabled = false; 
+                } 
+                lbl_RES.Text = "Maximum 3 Attempts Should be allowed, left: " + at; 
