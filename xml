@@ -1,0 +1,15 @@
+XmlDocument doc = new XmlDocument(); 
+            lbl_result.Text = ""; 
+            
+doc.Load("C:\\Users\\shubh\\source\\repos\\prac15\\prac15\\XMLFile1.xml"); 
+ 
+            foreach(XmlElement element in doc.DocumentElement.ChildNodes ) 
+            { 
+                string ch; 
+                ch = element.GetAttribute("Name"); 
+ 
+                if((element.ChildNodes[1].InnerText==ddl_CAT.Text) && 
+(element.ChildNodes[0].InnerText == ddl_LANG.Text)){ 
+                    lbl_result.Text += ch + "<br>"; 
+                } 
+            }
